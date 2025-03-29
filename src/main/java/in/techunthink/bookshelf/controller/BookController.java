@@ -33,10 +33,10 @@ public class BookController {
         log.info("Fetching book with id: {}", id);
         Optional<Book> book = bookRepository.findById(id);
         return book.map(ResponseEntity::ok)
-                .orElseGet(() -> {
-                    log.warn("Book with id: {} not found", id);
-                    return ResponseEntity.notFound().build();
-                });
+            .orElseGet(() -> {
+                log.warn("Book with id: {} not found", id);
+                return ResponseEntity.notFound().build();
+            });
     }
 
     // POST a new book

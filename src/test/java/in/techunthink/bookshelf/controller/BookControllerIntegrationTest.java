@@ -1,5 +1,6 @@
 package in.techunthink.bookshelf.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import in.techunthink.bookshelf.entity.Book;
 import in.techunthink.bookshelf.repository.BookRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,11 +11,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
